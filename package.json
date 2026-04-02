@@ -1,17 +1,17 @@
 {
-  "name": "todo-app-express-backend",
+  "name": "tasks-app-express-backend",
   "version": "1.0.0",
   "description": "",
   "main": "Server.js",
   "scripts": {
     "start": "node Server.js"
   },
-  "author": "Renan Alencar",
+  "author": "Renan Costa Alencar",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.3.4"
+    "sqlite3": "^6.0.1"
   }
 }

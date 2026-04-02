@@ -1,37 +1,35 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
+# Tasks App Backend
 
-# TO-DO App Backend
-
-Este projeto é o backend da aplicação de gerenciamento de tarefas desenvolvimendo em Node, Express e Mongoose.
-
+Este projeto é o backend da aplicação de gerenciamento de tarefas, desenvolvido utilizando Node, Express e SQLite (banco de dados dinâmico em memória).
 
 ## Autores
 
 - [@renanalencar](https://www.github.com/renanalencar)
 
-
 ## Instalação
 
-Instale todo-app-express-backend com npm
+Na raiz do projeto, instale as dependências executando:
 
 ```bash
-  npm install todo-app-express-backend
-  cd todo-app-express-backend
+  npm install
 ```
     
-## Deploy
+## Como executar
 
-Para fazer o deploy desse projeto rode
+Para rodar o servidor localmente (por padrão ele será aberto na porta 5000):
 
 ```bash
-  npm run deploy
+  npm start
 ```
+
+> **Aviso:** Como o banco utiliza SQLite em memória (`:memory:`), todo o progresso será apagado caso você reinicie o servidor. No entanto, o sistema também é programado para criar imediatamente 10 tarefas pré-existentes de exemplo na inicialização, ajudando nos testes de front-end.
 
 
 ## Stack utilizada
 
-**Back-end:** Node, Express e MongoDB
+**Back-end:** Node, Express e SQLite3
 
 
 ## Documentação da API
@@ -42,9 +40,7 @@ Para fazer o deploy desse projeto rode
   GET /
 ```
 
-| Parâmetro   | Tipo       | Descrição                           |
-| :---------- | :--------- | :---------------------------------- |
-| `` | `` |  |
+Não solicita nenhum parâmetro. Retorna um array com o objeto de todas as tarefas existentes.
 
 #### Salva uma tarefa
 
@@ -54,7 +50,9 @@ Para fazer o deploy desse projeto rode
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `text`      | `string` | **Obrigatório**. O título da tarefa que você quer |
+| `text`      | `string`   | **Obrigatório**. A descrição/título da nova tarefa |
+| `dueDate`   | `string`   | A data de prazo de conclusão no formato ISO (ex: `"2026-12-31T23:59:59.000Z"`) |
+| `completed` | `boolean`  | Status verdadeiro ou falso da tarefa (Opcional, por padrão é criado como `false`) |
 
 #### Atualiza uma tarefa
 
@@ -64,8 +62,10 @@ Para fazer o deploy desse projeto rode
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `_id`      | `string` | **Obrigatório**. O ID da tarefa que você quer |
-| `text`      | `string` | **Obrigatório**. O título da tarefa que você quer |
+| `_id`       | `number`   | **Obrigatório**. O ID da tarefa que será modificada |
+| `text`      | `string`   | A nova descrição/título da tarefa |
+| `dueDate`   | `string`   | O novo prazo de conclusão para a tarefa |
+| `completed` | `boolean`  | Se a tarefa agora mudou seu estado de conclusão |
 
 #### Apaga uma tarefa
 
@@ -75,14 +75,9 @@ Para fazer o deploy desse projeto rode
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `_id`      | `string` | **Obrigatório**. O ID da tarefa que você quer |
-
-## Apêndice
-
-Coloque qualquer informação adicional aqui
+| `_id`       | `number`   | **Obrigatório**. O ID (inteiro) da tarefa que você deseja apagar |
 
 
-## Referência
+## Referência / Projeto de Origem
 
  - [Full Stack ToDo App | Node, React, Express, MongoDB Tutorial](https://thebravecoders.com/full-stack-todo-app)
- 

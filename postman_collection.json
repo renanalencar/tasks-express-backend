@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "8381c4af-83a8-40ce-b1b6-2ed8e602266f",
-		"name": "todo-app-express-backend",
+		"name": "tasks-app-express-backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3394526"
 	},
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"buy ice\"\r\n}",
+					"raw": "{\r\n    \"text\": \"buy ice\",\r\n    \"dueDate\": \"2026-12-31T23:59:59.000Z\",\r\n    \"completed\": false\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"663c285700aa356f0a118361\"\r\n}",
+					"raw": "{\r\n    \"_id\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -88,7 +88,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": \"663c2997701a4868f421541f\",\r\n    \"text\": \"Buy cake\"\r\n}",
+					"raw": "{\r\n    \"_id\": 1,\r\n    \"text\": \"Buy cake\",\r\n    \"dueDate\": \"2026-12-31T23:59:59.000Z\",\r\n    \"completed\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
